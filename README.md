@@ -53,8 +53,7 @@ Design Implications and Discussion:
 This section discusses the implications and reasons of the design decisions made during the global architecture design.
 
 ## 5. Acceptance criteria
-
-minimum acceptance criteria:successfully replicate the Sid Project in the MOC environment.
+minimum acceptance criteria:successfully replicate the Sid Project in the MOC environment.<br>
 stretch goals:deal with the security aspects of Sid.
 ## 6.  Release Planning:
 

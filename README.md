@@ -10,9 +10,7 @@ The architecture of Sid can be separated into 3 large components:
  - middleware, specifically API gateway, database for user information, scheduling services and communication modules to talk to back-end services
  - back-end, specfically a container infrastructure where kubernetes instances run on VMs, maintained by a cloud-operating system.
 
-Currently, Sid's backend container infrastructure is powered by Amazon Elastic Kubernetes Service (EKS), which runs on AWS. The final goal of this project (by the end of this semester) is to *run Sid's backend container infrastructure on MOC via openstack.* 
-
-In other words, we will replicate the functionalities of Amazon Elastic Kubernetes Service by developing a cloud operating system using openstack. The cloud operating system will deploy and manage new VMs on MOC. These VMs will run Kubernetes to host scientific computing environment as requested by the user (via the front-end interface).
+Currently, Sid's backend container infrastructure is powered by Amazon Elastic Kubernetes Service (EKS), which runs on AWS. The final goal of this project (by the end of this semester) is to **run Sid's backend container infrastructure on MOC via openstack.** In other words, we will replicate the functionalities of Amazon Elastic Kubernetes Service by developing a cloud operating system using openstack. The cloud operating system will deploy and manage new VMs on MOC. These VMs will run Kubernetes to host scientific computing environment as requested by the user (via the front-end interface).
 
 ## 2. Users/Personas Of The Project:
 

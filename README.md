@@ -1,9 +1,9 @@
 ** **
 # Create a Kubernetes based on-demand research computing environment in MOC
 
-## 1. Vision and Goals Of The Project:
+## 1.Vision and Goals Of The Project:
 
-The cloud is full of unlimited computing power and storage, but managing it is not easy. Sid is a research tool that allows researchers to launch scientific computing environments, such as Jupyter Notebook and R Studio, on the cloud effortlessly. 
+The cloud is full of unlimited computing power and storage, but managing it is not easy. Sid is a research tool that allows researchers to launch scientific computing environments, such as Jupyter Notebook and R Studio, on the cloud effortlessly.  
 
 The architecture of Sid can be separated into 3 large components:
  - front-end, specficially a web interface

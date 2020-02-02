@@ -14,9 +14,13 @@ Currently, Sid's backend container infrastructure is powered by Amazon Elastic K
 
 ## 2. Users/Personas Of The Project:
 
-This section describes the principal user roles of the project together with the key characteristics of these roles. This information will inform the design and the user scenarios. A complete set of roles helps in ensuring that high-level requirements can be identified in the product backlog.
+As a project mainly working on backend, the active users are the technicians of Sid. Sid's administrators and developers should eventually know how to deploy the same Sid computing environment on MOC with Kubernetes as on AWS.
 
-Again, the description should be specific enough that you can determine whether user A, performing action B, is a member of the set of users the project is designed for.
+It targets the development team of Sid Cloud Based Research Computing.
+
+It does not target:
+
+Sid's end users, like researchers and scientists who wish to utilize cloud computing environments simply via the Sid interface without knowing which cloud platform (MOC/AWS/Azure/GCP) is on.
 
 ** **
 

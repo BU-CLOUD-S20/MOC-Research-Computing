@@ -75,9 +75,8 @@ Our goal is porting the current system onto MOC. The current Sid system uses Kub
 * **Focus on "Blue Part"**: Since the front-end and Kubernetes environment are mature now, the team should focus on "blue part" of the diagram to ensure the whole system can run properly on MOC. At the same time, as the manager has mentioned, don't make any change to the "green block".
 
 ## 5. Acceptance criteria
-
-This section discusses the minimum acceptance criteria at the end of the project and stretch goals.
-
+minimum acceptance criteria:successfully replicate the Sid Project in the MOC environment.<br>
+stretch goals:deal with the security aspects of Sid.
 ## 6.  Release Planning:
 
 ##### Sprint 1 (02/05/2020)

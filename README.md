@@ -37,6 +37,8 @@ For the cloud portion of our solution, we will be designing a kubernetes based i
 This section provides a high-level architecture or a conceptual diagram showing the scope of the solution. If wireframes or visuals have already been done, this section could also be used to show how the intended solution will look. This section also provides a walkthrough explanation of the architectural structure.
 -->
 
+> Note that figures in this section come from the design documenation of Sid team.
+
 The architecture of the current work is shown as below:
 
 ![Current Arch](./Documentation/Images/CurrArch.png)

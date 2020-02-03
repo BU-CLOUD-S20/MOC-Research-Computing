@@ -54,7 +54,8 @@ This section discusses the implications and reasons of the design decisions made
 
 ## 5. Acceptance criteria
 minimum acceptance criteria:successfully replicate the Sid Project in the MOC environment.<br>
-stretch goals:deal with the security aspects of Sid.
+stretch goals:deal with the security aspects of Sid.<br>
+can reproduce the code, so when there is some bug we can debug and fix it.
 ## 6.  Release Planning:
 
 Release planning section describes how the project will deliver incremental sets of features and functions in a series of releases to completion. Identification of user stories associated with iterations that will ease/guide sprint planning sessions is encouraged. Higher level details for the first iteration is expected.

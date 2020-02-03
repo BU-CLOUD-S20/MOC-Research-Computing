@@ -28,8 +28,6 @@ As a project mainly working on backend, the active users are the technicians of 
 - It targets the development team of Sid Cloud Based Research Computing.
 - It does not target Sid's end users, like researchers and scientists who wish to utilize cloud computing environments simply via the Sid interface without knowing which cloud platform (MOC/AWS/Azure/GCP) is on.
 
-** **
-
 ## 3.   Scope and Features Of The Project:
 
 The Scope places a boundary around the solution by detailing the range of features and functions of the project. This section helps to clarify the solution scope and can explicitly state what will not be delivered as well.

@@ -15,14 +15,8 @@ Currently, Sid's backend container infrastructure is powered by Amazon Elastic K
 ## 2. Users/Personas Of The Project:
 
 As a project mainly working on backend, the active users are the technicians of Sid. Sid's administrators and developers should eventually know how to deploy the same Sid computing environment on MOC with Kubernetes as on AWS.
-
-It targets the development team of Sid Cloud Based Research Computing.
-
-It does not target:
-
-Sid's end users, like researchers and scientists who wish to utilize cloud computing environments simply via the Sid interface without knowing which cloud platform (MOC/AWS/Azure/GCP) is on.
-
-** **
+- It targets the development team of Sid Cloud Based Research Computing.
+- It does not target Sid's end users, like researchers and scientists who wish to utilize cloud computing environments simply via the Sid interface without knowing which cloud platform (MOC/AWS/Azure/GCP) is on.
 
 ## 3.   Scope and Features Of The Project:
 
@@ -32,8 +26,6 @@ For the frontend and middleware solution, the work previously done by the Harvar
 #### Backend/Cloud
 For the cloud portion of our solution, we will be designing a kubernetes based infrastructure that will work with the SID frontend/middleware solution provided and the tools currently provided by the MOC. The goal is to mimic the necessary features that SID uses with AWS, such as, EC2 instances and kubernetes support, and recreate them on the MOC infrastructure. This will prove the concept of being able to connect SID to a seperate cloud provider. A low priority focus has been placed on authentication and data protection.  
 
-
-** **
 
 ## 4. Solution Concept
 

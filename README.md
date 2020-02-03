@@ -26,9 +26,12 @@ Sid's end users, like researchers and scientists who wish to utilize cloud compu
 
 ## 3.   Scope and Features Of The Project:
 
-The Scope places a boundary around the solution by detailing the range of features and functions of the project. This section helps to clarify the solution scope and can explicitly state what will not be delivered as well.
+#### Front End and Middleware
+For the frontend and middleware solution, the work previously done by the Harvard SID team will serve as the foundation for the MOC implementation. Our goal is to use the provided Heroku code and host a instance on the MOC. We will not be doing any major adjustments to the current SID approach only ad-hoc tasks that prevent us from completing the implementation. 
 
-It should be specific enough that you can determine that e.g. feature A is in-scope, while feature B is out-of-scope.
+#### Backend/Cloud
+For the cloud portion of our solution, we will be designing a kubernetes based infrastructure that will work with the SID frontend/middleware solution provided and the tools currently provided by the MOC. The goal is to mimic the necessary features that SID uses with AWS, such as, EC2 instances and kubernetes support, and recreate them on the MOC infrastructure. This will prove the concept of being able to connect SID to a seperate cloud provider. A low priority focus has been placed on authentication and data protection.  
+
 
 ** **
 
@@ -77,8 +80,11 @@ This section discusses the minimum acceptance criteria at the end of the project
 
 ## 6.  Release Planning:
 
-Release planning section describes how the project will deliver incremental sets of features and functions in a series of releases to completion. Identification of user stories associated with iterations that will ease/guide sprint planning sessions is encouraged. Higher level details for the first iteration is expected.
-
+##### Sprint 1 (02/05/2020)
+* Get development environment running
+* MOC access
+* Trying Openstack
+* Trying Kubernetes
 
 <!--
 ** **

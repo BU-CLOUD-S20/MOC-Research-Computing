@@ -34,17 +34,42 @@ It should be specific enough that you can determine that e.g. feature A is in-sc
 
 ## 4. Solution Concept
 
-This section provides a high-level outline of the solution.
 
-Global Architectural Structure Of the Project:
 
+### Global Architectural Structure Of the Project
+
+<!--
 This section provides a high-level architecture or a conceptual diagram showing the scope of the solution. If wireframes or visuals have already been done, this section could also be used to show how the intended solution will look. This section also provides a walkthrough explanation of the architectural structure.
+-->
 
+The architecture of the current work is shown as below:
 
+![Current Arch](./Documentation/Images/CurrArch.png)
 
-Design Implications and Discussion:
+As shown in the figure, we can find that the Sid's Backend is currently built on AWS. The goal of our project is porting the same system (the whole system, not only the backend) onto Mass Open Cloud (MOC). Therefore, the main job is rebuild the backend to satisfy the MOC's environment.
 
+The hierarchy of Sid's backend can be visualized as the following block diagram:
+
+<p align="center">
+    <img src="./Documentation/Images/SimpleBlock.png" width="50%">
+</p>
+
+Our work is going to make the green block works on MOC by replacing the blue block layer. Due to the differences of features and functions between MOC and AWS, the blue block has to re-design to ensure the communications between Sid Middleware and Kubernetes services work properly.
+
+### Design Implications and Discussion
+
+<!--
 This section discusses the implications and reasons of the design decisions made during the global architecture design.
+-->
+
+Some design concepts:
+* **No OpenShift**:
+The previous team has already prove that OpenShift works as good as expectation. Thanks for them hard working, we can get rid of this option.
+
+* **Combine the Kubernetes and OpenStack**:
+Our goal is porting the current system onto MOC. The current Sid system uses Kubernetes to manage Docker containers. Meanwhile MOC provides OpenStack to manage VMs. Hence, we decided to use two techniques together. As we can observe, some companies have already used them together. Thus, we think this is viable.
+
+* **Focus on "Blue Part"**: Since the front-end and Kubernetes environment are mature now, the team should focus on "blue part" of the diagram to ensure the whole system can run properly on MOC. At the same time, as the manager has mentioned, don't make any change to the "green block".
 
 ## 5. Acceptance criteria
 
@@ -54,6 +79,8 @@ This section discusses the minimum acceptance criteria at the end of the project
 
 Release planning section describes how the project will deliver incremental sets of features and functions in a series of releases to completion. Identification of user stories associated with iterations that will ease/guide sprint planning sessions is encouraged. Higher level details for the first iteration is expected.
 
+
+<!--
 ** **
 
 ## General comments
@@ -61,10 +88,4 @@ Release planning section describes how the project will deliver incremental sets
 Remember that you can always add features at the end of the semester, but you can't go back in time and gain back time you spent on features that you couldn't complete.
 
 ** **
-
-For more help on markdown, see
-https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
-
-In particular, you can add images like this (clone the repository to see details):
-
-![alt text](https://github.com/BU-NU-CLOUD-SP18/sample-project/raw/master/cloud.png "Hover text")
+-->

@@ -34,8 +34,6 @@ The Scope places a boundary around the solution by detailing the range of featur
 
 It should be specific enough that you can determine that e.g. feature A is in-scope, while feature B is out-of-scope.
 
-** **
-
 ## 4. Solution Concept
 
 This section provides a high-level outline of the solution.

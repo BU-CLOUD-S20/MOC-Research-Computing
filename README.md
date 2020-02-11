@@ -61,7 +61,7 @@ This section discusses the implications and reasons of the design decisions made
 
 Some design concepts:
 * **No OpenShift**:
-The previous team has already prove that OpenShift works as good as expectation. Thanks for them hard working, we can get rid of this option.
+The previous team has already prove that OpenShift works not as good as expectation. Thanks for them hard working, we can get rid of this option.
 
 * **Combine the Kubernetes and OpenStack**:
 Our goal is porting the current system onto MOC. The current Sid system uses Kubernetes to manage Docker containers. Meanwhile MOC provides OpenStack to manage VMs. Hence, we decided to use two techniques together. As we can observe, some companies have already used them together. Thus, we think this is viable.

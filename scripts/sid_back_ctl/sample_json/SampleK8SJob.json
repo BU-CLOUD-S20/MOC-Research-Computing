@@ -1,0 +1,199 @@
+{
+    "level": 30,
+    "time": 1582092399490,
+    "pid": 25343,
+    "hostname": "naplings-Ubuntu",
+    "ingress": {
+        "apiVersion": "extensions/v1beta1",
+        "kind": "Ingress",
+        "metadata": {
+            "name": "sid-ingress-fe3ca9e0-52dd-11ea-a559-8b8a1b238284",
+            "annotations": {
+                "kubernetes.io/ingress.class": "nginx",
+                "nginx.org/websocket-services": "sid-service-fe3ca9e0-52dd-11ea-a559-8b8a1b238284",
+                "nginx.ingress.kubernetes.io/ssl-redirect": "false",
+                "nginx.ingress.kubernetes.io/force-ssl-redirect": "false"
+            }
+        },
+        "spec": {
+            "rules": [
+                {
+                    "http": {
+                        "paths": [
+                            {
+                                "path": "/fe3ca9e0-52dd-11ea-a559-8b8a1b238284",
+                                "backend": {
+                                    "serviceName": "sid-service-fe3ca9e0-52dd-11ea-a559-8b8a1b238284",
+                                    "servicePort": 80
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "service": {
+        "apiVersion": "v1",
+        "kind": "Service",
+        "metadata": {
+            "name": "sid-service-fe3ca9e0-52dd-11ea-a559-8b8a1b238284",
+            "namespace": "default"
+        },
+        "spec": {
+            "ports": [
+                {
+                    "port": 80,
+                    "targetPort": 8000
+                }
+            ],
+            "selector": {
+                "sid_jobId": "fe3ca9e0-52dd-11ea-a559-8b8a1b238284"
+            },
+            "type": "ClusterIP",
+            "sessionAffinity": "None"
+        }
+    },
+    "job": {
+        "apiVersion": "batch/v1",
+        "kind": "Job",
+        "metadata": {
+            "name": "sid-job-fe3ca9e0-52dd-11ea-a559-8b8a1b238284"
+        },
+        "spec": {
+            "ttlSecondsAfterFinished": 100,
+            "backoffLimit": 0,
+            "template": {
+                "metadata": {
+                    "labels": {
+                        "sid_app": "undefined-fe3ca9e0-52dd-11ea-a559-8b8a1b238284",
+                        "sid_jobId": "fe3ca9e0-52dd-11ea-a559-8b8a1b238284",
+                        "sid_application": "desktop",
+                        "sid_application_version": "1.1.8-1",
+                        "sid_userID": "casuser",
+                        "sid_jobType": "interactive"
+                    }
+                },
+                "spec": {
+                    "serviceAccountName": "sid-job-runner",
+                    "volumes": [
+                        {
+                            "name": "dshm",
+                            "emptyDir": {
+                                "medium": "Memory"
+                            }
+                        }
+                    ],
+                    "restartPolicy": "Never",
+                    "priorityClassName": "interactive-job",
+                    "containers": [
+                        {
+                            "name": "cas-app-proxy",
+                            "image": "hmdc/cas-app-proxy:v1.0.1-1",
+                            "ports": [
+                                {
+                                    "containerPort": 8000,
+                                    "protocol": "TCP"
+                                }
+                            ],
+                            "readinessProbe": {
+                                "httpGet": {
+                                    "path": "/fe3ca9e0-52dd-11ea-a559-8b8a1b238284",
+                                    "port": 8000
+                                },
+                                "initialDelaySeconds": 10,
+                                "periodSeconds": 10
+                            },
+                            "env": [
+                                {
+                                    "name": "JOB_ID",
+                                    "value": "fe3ca9e0-52dd-11ea-a559-8b8a1b238284"
+                                },
+                                {
+                                    "name": "CAS_VALID_USER",
+                                    "value": "casuser"
+                                },
+                                {
+                                    "name": "PROXY_DESTINATION",
+                                    "value": "http://127.0.0.1:8080"
+                                },
+                                {
+                                    "name": "PROXYING_MODE",
+                                    "value": "xpra"
+                                },
+                                {
+                                    "name": "NODE_ENV",
+                                    "value": "production"
+                                },
+                                {
+                                    "name": "CAS_SERVICE_URL",
+                                    "value": "https://aws.development.sid.hmdc.harvard.edu/fe3ca9e0-52dd-11ea-a559-8b8a1b238284/authenticate"
+                                },
+                                {
+                                    "name": "CAS_SERVER_BASE_URL",
+                                    "value": "https://aws.development.sid.hmdc.harvard.edu/fe3ca9e0-52dd-11ea-a559-8b8a1b238284"
+                                }
+                            ],
+                            "resources": {
+                                "requests": {
+                                    "ephemeral-storage": "1Gi"
+                                },
+                                "limits": {
+                                    "ephemeral-storage": "1Gi"
+                                }
+                            }
+                        },
+                        {
+                            "name": "desktop",
+                            "image": "hmdc/sid-desktop:v1.1.8-1",
+                            "readinessProbe": {
+                                "tcpSocket": {
+                                    "port": 8080
+                                },
+                                "initialDelaySeconds": 10,
+                                "periodSeconds": 10
+                            },
+                            "resources": {
+                                "requests": {
+                                    "cpu": 1,
+                                    "memory": "4096Mi",
+                                    "ephemeral-storage": "4Gi"
+                                },
+                                "limits": {
+                                    "cpu": 1,
+                                    "memory": "4096Mi",
+                                    "ephemeral-storage": "4Gi"
+                                }
+                            },
+                            "env": [
+                                {
+                                    "name": "JOB_ID",
+                                    "value": "fe3ca9e0-52dd-11ea-a559-8b8a1b238284"
+                                },
+                                {
+                                    "name": "DISABLE_AUTH",
+                                    "value": "true"
+                                },
+                                {
+                                    "name": "ROOT",
+                                    "value": "TRUE"
+                                },
+                                {
+                                    "name": "GRANT_SUDO",
+                                    "value": "yes"
+                                }
+                            ],
+                            "volumeMounts": [
+                                {
+                                    "mountPath": "/dev/shm",
+                                    "name": "dshm"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "v": 1
+}

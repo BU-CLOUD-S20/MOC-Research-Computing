@@ -23,3 +23,15 @@ bash run.sh
 > The dockers are running in background.
 >
 > The Sid Worker Nodejs Server runs in a tmux session, use `tmux attach -t sid_worker` to see the output, use `Ctrl-B D` to detach current tmux session.
+
+---------
+
+## `sid_back_ctl`
+*Currently, this helper script is not fully functional.*
+
+Firstly, following the instruction to run Kubernetes with ingress enabled. Then get in to `sid_ctl` directory and run `bash run.sh`. This script will deploy a "1 CPU / 4Gi Mem" Sid-Desktop application in Kubernetes. After that, you can use `kubectl delete --all pods` to release resource.
+
+Note that you don't need to run docker (Redis and MongoDB) and make other setups. But if you want to access the link, you have to **update** host file by:
+```bash  
+sudo sed -E -e 's/^[0-9.]+( +aws\.development\.sid\.hmdc\.harvard\.edu)/'$(minikube ip)'\1/' -i  /etc/hosts
+```

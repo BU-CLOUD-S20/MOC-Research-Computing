@@ -1,0 +1,139 @@
+[
+    {
+        "_id": "5e4cb7e832f95ace271070e8",
+        "name": "desktop",
+        "displayName": "Sid Desktop",
+        "subtitle": "Launch a Linux LXQt desktop with R, Python, and more.",
+        "icon": "https://forum.lxqt.org/images/lxqt.svg",
+        "screenshot": "https://news-cdn.softpedia.com/images/news2/Fedora-22-Beta-LXDE-Screenshot-Tour-479132-3.jpg",
+        "description": "The Sid Desktop is a virtual Linux desktop pre-loaded with applications used in a typical workflow for students of social science.",
+        "owner": "system",
+        "interactive": true,
+        "packages": [
+            "R",
+            "python"
+        ],
+        "versions": [
+            {
+                "version": "1.1.8-1",
+                "default": true,
+                "defaultInJobSelection": true,
+                "container": "hmdc/sid-desktop:v1.1.8-1",
+                "registry": "dockerhub"
+            }
+        ],
+        "recommendedSettings": {
+            "_id": "5e4cb83188897747572ba300",
+            "cpu": 1,
+            "ram": 4
+        },
+        "proxySettings": {
+            "_id": "5e4cb83188897747572ba301",
+            "mode": "xpra"
+        },
+        "port": 8080
+    },
+    {
+        "_id": "5e4cb7e832f95ace271070e9",
+        "name": "rstudio",
+        "displayName": "R Studio",
+        "subtitle": "Launch an R Studio session.",
+        "icon": "https://rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png",
+        "screenshot": "https://d33wubrfki0l68.cloudfront.net/8f498e63b7073fc26aaa9850a0a71ae2069c2440/f8886/2019/04/30/rstudio-1-2-release/rstudio-1-2.png",
+        "description": "RStudio is an integrated development environment (IDE) for R. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management.",
+        "owner": "system",
+        "interactive": true,
+        "packages": [
+            "R"
+        ],
+        "versions": [
+            {
+                "version": "3.6.0",
+                "default": true,
+                "defaultInJobSelection": false,
+                "container": "rocker/rstudio:3.6.0",
+                "registry": "dockerhub"
+            }
+        ],
+        "recommendedSettings": {
+            "_id": "5e4cb83188897747572ba302",
+            "cpu": 1,
+            "ram": 4
+        },
+        "proxySettings": {
+            "_id": "5e4cb83188897747572ba303",
+            "mode": "rstudio"
+        },
+        "port": 8787
+    },
+    {
+        "_id": "5e4cb7e832f95ace271070ea",
+        "name": "jupyter",
+        "displayName": "Jupyter",
+        "subtitle": "Launch a Jupyter session.",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/883px-Jupyter_logo.svg.png",
+        "screenshot": "https://jupyter-dashboards-layout.readthedocs.io/en/latest/_images/notebook.png",
+        "description": "Jupyter is an interactive data science and scientific computing platform supporting all common programming languages.",
+        "owner": "system",
+        "interactive": true,
+        "packages": [
+            "Julia",
+            "python3",
+            "R"
+        ],
+        "versions": [
+            {
+                "version": "2019-06-01",
+                "default": true,
+                "defaultInJobSelection": true,
+                "container": "jupyter/datascience-notebook:d4cbf2f80a2a",
+                "command": [
+                    "start-notebook.sh"
+                ],
+                "args": [
+                    "--NotebookApp.quit_button=False",
+                    "--NotebookApp.password=\"\"",
+                    "--NotebookApp.token=\"\"",
+                    "--NotebookApp.base_url=$(JOB_ID)",
+                    "--NotebookApp.allow_credentials=True",
+                    "--NotebookApp.trust_xheaders=True",
+                    "--NotebookApp.allow_origin=\"*\"",
+                    "--NotebookApp.disable_check_xsrf=True"
+                ],
+                "runAsUser": 0,
+                "registry": "dockerhub"
+            },
+            {
+                "version": "2019-05-12",
+                "default": false,
+                "defaultInJobSelection": false,
+                "container": "jupyter/datascience-notebook:abdb27a6dfbb",
+                "command": [
+                    "start-notebook.sh"
+                ],
+                "args": [
+                    "--NotebookApp.quit_button=False",
+                    "--NotebookApp.password=\"\"",
+                    "--NotebookApp.token=\"\"",
+                    "--NotebookApp.base_url=$(JOB_ID)",
+                    "--NotebookApp.allow_credentials=True",
+                    "--NotebookApp.trust_xheaders=True",
+                    "--NotebookApp.allow_origin=\"*\"",
+                    "--NotebookApp.disable_check_xsrf=True"
+                ],
+                "runAsUser": 0,
+                "registry": "dockerhub"
+            }
+        ],
+        "recommendedSettings": {
+            "_id": "5e4cb83188897747572ba304",
+            "cpu": 1,
+            "ram": 4
+        },
+        "proxySettings": {
+            "_id": "5e4cb83188897747572ba305",
+            "mode": "none"
+        },
+        "port": 8888
+    }
+]

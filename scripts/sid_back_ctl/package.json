@@ -1,0 +1,17 @@
+{
+  "name": "sid_backend_control",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "joi": "^13.7.0",
+    "uuid": "^3.3.3",
+    "pino": "^5.13.4",
+    "kubernetes-client": "^6.12.1"
+  },
+  "author": "",
+  "license": "MIT"
+}

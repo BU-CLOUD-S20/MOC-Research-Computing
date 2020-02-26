@@ -78,7 +78,7 @@ minimum acceptance criteria:successfully replicate the Sid Project in the MOC en
 stretch goals:deal with the security aspects of Sid.
 ## 6.  Release Planning:
 
-##### Sprint 1 (02/05/2020)
+##### Sprint 1 (02/05/2020)    [Demo Slides](https://drive.google.com/open?id=143zmWe8QWx_mgSnVnRZh-ouzFL96VPx0)
 * Get development environment running
 * MOC access
 * Trying Openstack

@@ -84,6 +84,13 @@ stretch goals:deal with the security aspects of Sid.
 * Trying Openstack
 * Trying Kubernetes
 
+
+##### Sprint 2 (02/26/2020)   - [Demo Slides](https://drive.google.com/open?id=1k5tufYwgwYa4eGq1knyiy0dHah0J6V94)
+* Install Sid development environment on every teammates' computer
+* Build Sid backend CLI
+* Deploy master and slave node using Kubeadm
+* Research on Kubernetes, OpenStack, OpenShift, Magnum, EKS
+
 <!--
 ** **
 

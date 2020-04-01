@@ -1,6 +1,7 @@
 resource "openstack_compute_keypair_v2" "my-cloud-key" {
   name       = "my-key"
-  public_key = "ssh-rsa AAAAB3............}
+  public_key = "ssh-rsa AAAAB3............"
+}
 
 resource "openstack_compute_instance_v2" "terraform" {
   name            = "terraform-vm"

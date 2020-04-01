@@ -19,13 +19,10 @@ resource "openstack_compute_keypair_v2" "my-cloud-key" {
   public_key = "ssh-rsa AAAAB3Nz..."
 }
 
-  brew install terraform
-
-> terraform init
-
-> terraform plan
-
-> terraform apply
+    brew install terraform
+    terraform init
+    terraform plan
+    terraform apply
 
 If everything is fine, add information of the VM which you want to launch in main.tf like below:
 resource "openstack_compute_instance_v2" "terraform" {
@@ -40,8 +37,8 @@ resource "openstack_compute_instance_v2" "terraform" {
   }
 }
 
-> terraform apply
+    terraform apply
 
 Done! Can run below to check the result
 
->> terraform show
+    terraform show

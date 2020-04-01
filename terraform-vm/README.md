@@ -1,4 +1,4 @@
-* Deploying a VM in OpenStack via Terraform
+# Deploying a VM in OpenStack via Terraform
 
 Basically follow tutorial https://galaxyproject.github.io/training-material/topics/admin/tutorials/terraform/tutorial.html
 
@@ -19,13 +19,13 @@ resource "openstack_compute_keypair_v2" "my-cloud-key" {
   public_key = "ssh-rsa AAAAB3Nz..."
 }
 
->> brew install terraform
+  brew install terraform
 
->> terraform init
+> terraform init
 
->> terraform plan
+> terraform plan
 
->> terraform apply
+> terraform apply
 
 If everything is fine, add information of the VM which you want to launch in main.tf like below:
 resource "openstack_compute_instance_v2" "terraform" {
@@ -40,7 +40,7 @@ resource "openstack_compute_instance_v2" "terraform" {
   }
 }
 
->> terraform apply
+> terraform apply
 
 Done! Can run below to check the result
 

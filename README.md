@@ -91,6 +91,11 @@ stretch goals:deal with the security aspects of Sid.
 * Deploy master and slave node using Kubeadm
 * Research on Kubernetes, OpenStack, OpenShift, Magnum, EKS
 
+
+##### Sprint 4 (04/01/2020)   - [Demo Slides](https://drive.google.com/open?id=12DP1aVrxA2i03WMOxHbNmhVAwlpG3eV5)
+* Use Terraform to create resources on MOC (OpenStack)
+*	Manually deploy Kubernetes on OpenStack
+
 <!--
 ** **
 

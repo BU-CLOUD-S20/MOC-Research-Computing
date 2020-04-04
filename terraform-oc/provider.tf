@@ -7,10 +7,6 @@ provider "kubernetes" {
   load_config_file = false
 }
 
-provider "docker" {
-
-}
-
 provider "openstack"{
   
 }

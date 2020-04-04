@@ -44,6 +44,9 @@ resource "kubernetes_deployment" "sidfrontend" {
         container {
           image = "node"
           name  = "worker"
+          port{
+              container_port = 8080
+          }
           env {
             name  = "environment"
             value = "test"
@@ -52,6 +55,9 @@ resource "kubernetes_deployment" "sidfrontend" {
         container {
           image = "node"
           name  = "frontend"
+          port{
+              container_port = 8080
+          }
           env {
             name  = "environment"
             value = "test"

@@ -42,9 +42,12 @@ For the cloud portion of our solution, we will be designing a kubernetes based i
 This section provides a high-level architecture or a conceptual diagram showing the scope of the solution. If wireframes or visuals have already been done, this section could also be used to show how the intended solution will look. This section also provides a walkthrough explanation of the architectural structure.
 -->
 
+
+
 > Note that figures in this section come from the design documenation of Sid team.
 
 The architecture of the current work is shown as below:
+
 
 ![Current Arch](./Documentation/Images/CurrArch.png)
 
@@ -85,6 +88,7 @@ stretch goals:deal with the security aspects of Sid.
 * Trying Kubernetes
 
 
+
 ##### Sprint 2 (02/26/2020)   - [Demo Slides](https://drive.google.com/open?id=1k5tufYwgwYa4eGq1knyiy0dHah0J6V94)
 * Install Sid development environment on every teammates' computer
 * Build Sid backend CLI
@@ -99,9 +103,11 @@ stretch goals:deal with the security aspects of Sid.
 <!--
 ** **
 
+
 ## General comments
 
 Remember that you can always add features at the end of the semester, but you can't go back in time and gain back time you spent on features that you couldn't complete.
 
 ** **
 -->
+

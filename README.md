@@ -1,5 +1,8 @@
-** **
 # Create a Kubernetes based on-demand research computing environment in MOC
+Mentor: Mike Reekie
+
+Team: Alex Wong, Bowen Qin, Mariano Pache, Sakhan Bhatia, Yuhao Zhou, Zeyu Song
+
 
 ## 1.Vision and Goals Of The Project:
 
@@ -12,25 +15,22 @@ The architecture of Sid can be separated into 3 large components:
 
 Currently, Sid's backend container infrastructure is powered by Amazon Elastic Kubernetes Service (EKS), which runs on AWS. The final goal of this project (by the end of this semester) is to **run Sid's backend container infrastructure on MOC via openstack.** In other words, we will replicate the functionalities of Amazon Elastic Kubernetes Service by developing a cloud operating system using openstack. The cloud operating system will deploy and manage new VMs on MOC. These VMs will run Kubernetes to host scientific computing environment as requested by the user (via the front-end interface).
 
+More info about Sid: https://scholar.harvard.edu/sid
+
 ## 2. Users/Personas Of The Project:
 
 As a project mainly working on backend, the active users are the technicians of Sid. Sid's administrators and developers should eventually know how to deploy the same Sid computing environment on MOC with Kubernetes as on AWS.
-
-It targets the development team of Sid Cloud Based Research Computing.
-
-It does not target:
-
-Sid's end users, like researchers and scientists who wish to utilize cloud computing environments simply via the Sid interface without knowing which cloud platform (MOC/AWS/Azure/GCP) is on.
-
-** **
+- It targets the development team of Sid Cloud Based Research Computing.
+- It does not target Sid's end users, like researchers and scientists who wish to utilize cloud computing environments simply via the Sid interface without knowing which cloud platform (MOC/AWS/Azure/GCP) is on.
 
 ## 3.   Scope and Features Of The Project:
 
-The Scope places a boundary around the solution by detailing the range of features and functions of the project. This section helps to clarify the solution scope and can explicitly state what will not be delivered as well.
+#### Front End and Middleware
+For the frontend and middleware solution, the work previously done by the Harvard SID team will serve as the foundation for the MOC implementation. Our goal is to use the provided Heroku code and host a instance on the MOC. We will not be doing any major adjustments to the current SID approach only ad-hoc tasks that prevent us from completing the implementation. 
 
-It should be specific enough that you can determine that e.g. feature A is in-scope, while feature B is out-of-scope.
+#### Backend/Cloud
+For the cloud portion of our solution, we will be designing a kubernetes based infrastructure that will work with the SID frontend/middleware solution provided and the tools currently provided by the MOC. The goal is to mimic the necessary features that SID uses with AWS, such as, EC2 instances and kubernetes support, and recreate them on the MOC infrastructure. This will prove the concept of being able to connect SID to a seperate cloud provider. A low priority focus has been placed on authentication and data protection.  
 
-** **
 
 ## 4. Solution Concept
 
@@ -42,7 +42,12 @@ It should be specific enough that you can determine that e.g. feature A is in-sc
 This section provides a high-level architecture or a conceptual diagram showing the scope of the solution. If wireframes or visuals have already been done, this section could also be used to show how the intended solution will look. This section also provides a walkthrough explanation of the architectural structure.
 -->
 
+
+
+> Note that figures in this section come from the design documenation of Sid team.
+
 The architecture of the current work is shown as below:
+
 
 ![Current Arch](./Documentation/Images/CurrArch.png)
 
@@ -64,7 +69,7 @@ This section discusses the implications and reasons of the design decisions made
 
 Some design concepts:
 * **No OpenShift**:
-The previous team has already prove that OpenShift works as good as expectation. Thanks for them hard working, we can get rid of this option.
+The previous team has already prove that OpenShift works not as good as expectation. Thanks for them hard working, we can get rid of this option.
 
 * **Combine the Kubernetes and OpenStack**:
 Our goal is porting the current system onto MOC. The current Sid system uses Kubernetes to manage Docker containers. Meanwhile MOC provides OpenStack to manage VMs. Hence, we decided to use two techniques together. As we can observe, some companies have already used them together. Thus, we think this is viable.
@@ -72,16 +77,32 @@ Our goal is porting the current system onto MOC. The current Sid system uses Kub
 * **Focus on "Blue Part"**: Since the front-end and Kubernetes environment are mature now, the team should focus on "blue part" of the diagram to ensure the whole system can run properly on MOC. At the same time, as the manager has mentioned, don't make any change to the "green block".
 
 ## 5. Acceptance criteria
-
-This section discusses the minimum acceptance criteria at the end of the project and stretch goals.
-
+minimum acceptance criteria:successfully replicate the Sid Project in the MOC environment.<br>
+stretch goals:deal with the security aspects of Sid.
 ## 6.  Release Planning:
 
-Release planning section describes how the project will deliver incremental sets of features and functions in a series of releases to completion. Identification of user stories associated with iterations that will ease/guide sprint planning sessions is encouraged. Higher level details for the first iteration is expected.
+##### Sprint 1 (02/05/2020)   - [Demo Slides](https://drive.google.com/open?id=143zmWe8QWx_mgSnVnRZh-ouzFL96VPx0)
+* Get development environment running
+* MOC access
+* Trying Openstack
+* Trying Kubernetes
 
+
+
+##### Sprint 2 (02/26/2020)   - [Demo Slides](https://drive.google.com/open?id=1k5tufYwgwYa4eGq1knyiy0dHah0J6V94)
+* Install Sid development environment on every teammates' computer
+* Build Sid backend CLI
+* Deploy master and slave node using Kubeadm
+* Research on Kubernetes, OpenStack, OpenShift, Magnum, EKS
+
+
+##### Sprint 4 (04/01/2020)   - [Demo Slides](https://drive.google.com/open?id=12DP1aVrxA2i03WMOxHbNmhVAwlpG3eV5)
+* Use Terraform to create resources on MOC (OpenStack)
+*	Manually deploy Kubernetes on OpenStack
 
 <!--
 ** **
+
 
 ## General comments
 
@@ -89,3 +110,4 @@ Remember that you can always add features at the end of the semester, but you ca
 
 ** **
 -->
+

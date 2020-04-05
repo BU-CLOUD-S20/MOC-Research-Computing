@@ -1,0 +1,32 @@
+resource "openstack_compute_keypair_v2" "my-cloud-key" {
+  name       = "new"
+  public_key = "ssh-rsa AAAA"
+}
+
+resource "openstack_compute_instance_v2" "test" {
+  name            = "manager"
+  image_id      = "1925d8ca-5f44-4828-b92b-cb27990d5aac"
+  flavor_name     = "m1.tiny"
+  key_pair        = "${openstack_compute_keypair_v2.my-cloud-key.name}"
+  security_groups = ["default"]
+
+
+  network {
+    name = "test"
+  }
+
+//use cloud-init to initialize the instance 
+
+user_data = <<-EOF
+  #cloud-config
+  write_files:
+  - content: |
+     Write Script here
+
+    owner: root:root
+    path: /etc/…..
+    permissions: '0644'
+runcmd:
+   - [ /path/to/the/script ]
+
+}

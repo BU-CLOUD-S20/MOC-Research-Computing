@@ -1,0 +1,8 @@
+{
+    "cpu": 1,
+    "mem": 2,
+    "type": "interactive",
+    "application": "desktop",
+    "application_version": "1.1.8-1",
+    "storage": "None"
+}

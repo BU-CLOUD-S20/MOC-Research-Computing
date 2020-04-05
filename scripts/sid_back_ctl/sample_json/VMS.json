@@ -1,0 +1,14 @@
+[
+    {
+        "jobId": "903d5d30-52cf-11ea-8c65-f3b31f82d54b",
+        "userName": "casuser",
+        "application": "desktop",
+        "status": "Running",
+        "started": "1582086201992",
+        "link": "https://aws.undefined.sid.hmdc.harvard.edu/903d5d30-52cf-11ea-8c65-f3b31f82d54b",
+        "applicationVersion": "1.1.8-1",
+        "cpu": 1,
+        "mem": 2,
+        "jobType": "interactive"
+    }
+]

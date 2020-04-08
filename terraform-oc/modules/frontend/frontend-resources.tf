@@ -37,31 +37,92 @@ resource "kubernetes_deployment" "sidfrontend" {
               container_port = 27017
           }
           env {
-            name  = "environment"
-            value = "test"
+            name  = "MONGO_INITDB_ROOT_USERNAME"
+            value = "mongoadmin"
+          }
+          env {
+            name  = "MONGO_INITDB_ROOT_PASSWORD"
+            value = "secret"
           }
         }
         container {
-          image = "node"
+          image = "docker-registry.default.svc:5000/on-demand-research-computing-k8-env/worker"
           name  = "worker"
           port{
               container_port = 8080
           }
           env {
-            name  = "environment"
-            value = "test"
+            name  = "BACKEND_ENV"
+            value = "development"
+          }
+          env {
+            name  = "KUBERNETES_CA_CERT"
+            value = "ABABABABABBABABABABBABABAB"
+          }
+          env {
+            name  = "KUBERNETES_URL"
+            value = "10.0.0.1"
+          }
+          env {
+            name  = "KUBERNETES_TOKEN"
+            value = "BABABABBABABABABABABBABABABAB"
           }
         }
         container {
-          image = "node"
+          image = "docker-registry.default.svc:5000/on-demand-research-computing-k8-env/gulp:latest"
           name  = "frontend"
           port{
-              container_port = 8080
+              container_port = 3000
           }
           env {
-            name  = "environment"
+            name  = "GDRIVE_CLIENT_ID"
             value = "test"
           }
+          env {
+            name  = "GDRIVE_CLIENT_SECRET"
+            value = "test"
+          }
+          env {
+            name  = "GDRIVE_CALLBACK_URL"
+            value = "https://development.sid.hmdc.harvard.edu/auth/storage/google/callback"
+          }
+          env {
+            name  = "DEBUG"
+            value = "*"
+          }
+          env {
+            name  = "BACKEND_ENV"
+            value = "development"
+          }
+          env {
+            name  = "NODE_ENV"
+            value = "local"
+          }
+          env {
+            name  = "EXPRESS_SECRET"
+            value = "abc"
+          }
+          env {
+            name  = "serverBaseURLHarvardLogin"
+            value = "https://development.sid.hmdc.harvard.edu"
+          }
+          env {
+            name  = "serviceURLHarvardLogin"
+            value = "https://development.sid.hmdc.harvard.edu/login"
+          }
+          env {
+            name  = "ssoBaseURLHarvardLogin"
+            value = "test"
+          }
+          env {
+            name  = "USE_MOCK_CAS"
+            value = "0"
+          }
+          env {
+            name  = "MONGODB_URI"
+            value = "mongodb://mongoadmin:secret@localhost/rce_database?authSource=admin"
+          }
+
         }
       }
     }

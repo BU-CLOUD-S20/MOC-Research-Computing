@@ -46,7 +46,7 @@ resource "kubernetes_deployment" "sidfrontend" {
           }
         }
         container {
-          image = "docker-registry.default.svc:5000/on-demand-research-computing-k8-env/worker"
+          image = "docker-registry.default.svc:5000/on-demand-research-computing-k8-env/worker:v2"
           name  = "worker"
           port{
               container_port = 8080
@@ -69,7 +69,7 @@ resource "kubernetes_deployment" "sidfrontend" {
           }
         }
         container {
-          image = "docker-registry.default.svc:5000/on-demand-research-computing-k8-env/gulp:latest"
+          image = "docker-registry.default.svc:5000/on-demand-research-computing-k8-env/gulp:v3"
           name  = "frontend"
           port{
               container_port = 3000

@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"frontend","Source":"./modules/frontend","Dir":"modules/frontend"},{"Key":"middleware","Source":"./modules/middleware","Dir":"modules/middleware"},{"Key":"","Source":"","Dir":"."}]}
+{"Modules":[{"Key":"backend","Source":"./modules/backend","Dir":"modules/backend"},{"Key":"frontend","Source":"./modules/frontend","Dir":"modules/frontend"},{"Key":"","Source":"","Dir":"."}]}

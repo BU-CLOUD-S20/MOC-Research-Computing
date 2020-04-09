@@ -2,6 +2,6 @@ module "frontend"{
     source= "./modules/frontend"
 }
 
-module "middleware" {
-    source=  "./modules/middleware"
+module "backend" {
+    source=  "./modules/backend"
 }

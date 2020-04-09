@@ -118,9 +118,13 @@ resource "kubernetes_deployment" "sidfrontend" {
             name  = "USE_MOCK_CAS"
             value = "0"
           }
+          env{
+            name = "MONGODB_CA_CERT"
+            value = ""
+          }
           env {
             name  = "MONGODB_URI"
-            value = "mongodb://mongoadmin:secret@localhost/rce_database?authSource=admin"
+            value = "mongodb://mongoadmin:secret@localhost:27017/rce_database?authSource=admin"
           }
 
         }

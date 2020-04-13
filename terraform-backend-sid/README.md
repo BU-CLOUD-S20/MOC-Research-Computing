@@ -1,3 +1,40 @@
+# How to use this?
+
+## Part A (Terraform): Create VM (bastion, master node, slave node)
+
+1. cd inventory/k8-test-cluster
+2. Open (or vim) cluster.tfvars, and add value for "public_key_path"
+   - I have my own public/private key
+   - You can talk to me to use my public/private key (send it to you separately)
+   - TODO: should we use same private/public key?
+3. Most configurations should be in cluster.tfvars
+4. Run "terraform init ../../contrib/terraform/openstack"
+5. Run "terraform apply -var-file=cluster.tf ../../contrib/terraform/openstack"
+6. When you get success message, check on OpenStack Dashboard to see if instances/networks/routers/security groups are created and configured.
+7. Run "ansible -i inventory/$CLUSTER/hosts -m ping all".
+   - You should get an error because of security group limitation (TODO: this task - enable security group for ssh/icmp)
+   - To fix this, go to OpenStack Dashboard -> k8s-test-cluster-k8s -> manage rules -> add rules -> enable "all icmp" -> enable "ssh" -> save -> re-run ping command
+
+### Teardown
+1. "terraform destroy -var-file=cluster.tf ../../contrib/terraform/openstack"
+
+## Part B (Kubespray/Ansible): Deploying Kubernetes
+1. Open (or vim) group_vars/all/all.yml and add value for "openstack_password"
+   - If you don't have this password, ask me (Alex) or Yuhao.
+2. cd back to terraform-backend-sid directory, and run "ansible-playbook --become -i inventory/$CLUSTER/hosts cluster.yml"
+   - You should see it run checks. Could take up to 20 min. 
+   - It is only successful if you see no error message. 
+
+### Reset Kubernetes
+1. "ansible-playbook --become -i inventory/$CLUSTER/hosts reset.yml"
+
+## Part C (Deploy Kubernetes Image) - UNFINISHED! TODO!
+1. Deploy a test image onto kubernetes and make sure it's running healthily....
+2. Tried de-associate ip from bastion server and associate ip onto master node to make things easier (to ssh.etc)
+
+
+---------------------------------------------------------------------------------------------
+
 # Deploy a Production Ready Kubernetes Cluster
 
 ![Kubernetes Logo](https://raw.githubusercontent.com/kubernetes-sigs/kubespray/master/docs/img/kubernetes-logo.png)

@@ -102,6 +102,16 @@ stretch goals:deal with the security aspects of Sid.
 *	Manually deploy Kubernetes on OpenStack
 
 
+##### Sprint 5 (04/15/2020)   - [Demo Slides](https://drive.google.com/open?id=1Mtqfh3GklQ0-ExeGrEvJREuvOIBQuyQ5)
+Frontend: 
+- Containerize front-end with OpenShift
+- Using Terraform to deploy components automatically
+
+
+Backend:
+- Using Ansible / Kubespray to install Kubernetes on MOC
+- Bugs located and fixed in Terraform resources creating scripts
+
 
 
 

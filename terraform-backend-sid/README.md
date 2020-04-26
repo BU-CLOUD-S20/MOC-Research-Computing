@@ -11,7 +11,7 @@
 4. Run "terraform init ../../contrib/terraform/openstack"
 5. Run "terraform apply -var-file=cluster.tf ../../contrib/terraform/openstack"
 6. When you get success message, check on OpenStack Dashboard to see if instances/networks/routers/security groups are created and configured.
-7. Run "ansible -i inventory/$CLUSTER/hosts -m ping all".
+7. Run "ansible -i inventory/k8-test-cluster/hosts -m ping all".
    - You should get an error because of security group limitation (TODO: this task - enable security group for ssh/icmp)
    - To fix this, go to OpenStack Dashboard -> k8s-test-cluster-k8s -> manage rules -> add rules -> enable "all icmp" -> enable "ssh" -> save -> re-run ping command
 
@@ -26,7 +26,7 @@
    - It is only successful if you see no error message. 
 
 ### Reset Kubernetes
-1. "ansible-playbook --become -i inventory/$CLUSTER/hosts reset.yml"
+1. "ansible-playbook --become -i inventory/k8-test-cluster/hosts reset.yml"
 
 ## Part C (Deploy Kubernetes Image) - UNFINISHED! TODO!
 1. Deploy a test image onto kubernetes and make sure it's running healthily....

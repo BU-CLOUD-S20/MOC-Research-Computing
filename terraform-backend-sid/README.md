@@ -16,7 +16,7 @@
    - To fix this, go to OpenStack Dashboard -> k8s-test-cluster-k8s -> manage rules -> add rules -> enable "all icmp" -> enable "ssh" -> save -> re-run ping command
 
 ### Teardown
-1. "terraform destroy -var-file=cluster.tf ../../contrib/terraform/openstack"
+1. "terraform destroy -var-file=cluster.tfvars ../../contrib/terraform/openstack"
 
 ## Part B (Kubespray/Ansible): Deploying Kubernetes
 1. Open (or vim) group_vars/all/all.yml and add value for "openstack_password"

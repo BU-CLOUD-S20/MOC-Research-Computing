@@ -97,6 +97,9 @@ stretch goals:deal with the security aspects of Sid.
 
 ##### Ceph Paper Review (03/16/2020)   - [Demo Slides](https://drive.google.com/open?id=1_WevWllz4oGtsHG1JdnFqFl6_bS-MplD)
 
+##### Sprint 3 - N/A
+* Didn't do any sprint demo during Ceph Paper Review week
+
 ##### Sprint 4 (04/01/2020)   - [Demo Slides](https://drive.google.com/open?id=12DP1aVrxA2i03WMOxHbNmhVAwlpG3eV5)
 * Use Terraform to create resources on MOC (OpenStack)
 *	Manually deploy Kubernetes on OpenStack

@@ -21,7 +21,7 @@
 ## Part B (Kubespray/Ansible): Deploying Kubernetes
 1. Open (or vim) group_vars/all/all.yml and add value for "openstack_password"
    - If you don't have this password, ask me (Alex) or Yuhao.
-2. cd back to terraform-backend-sid directory, and run "ansible-playbook --become -i inventory/$CLUSTER/hosts cluster.yml"
+2. cd back to terraform-backend-sid directory, and run "ansible-playbook --become -i inventory/k8-test-cluster/hosts cluster.yml"
    - You should see it run checks. Could take up to 20 min. 
    - It is only successful if you see no error message. 
 

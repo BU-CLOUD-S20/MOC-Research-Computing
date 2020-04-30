@@ -34,7 +34,7 @@ In the original implemention of sid, the front-end and middleware was hosted on 
 #### Automation Scripts
 Creating automation scripts to deploy the entire sid software is the main focus of the project. We created Terraform and Kubespray/Ansible scripts to automatically deploy sid(front-end, middleware and backend/cloud).
 
-In the front-end, we use a terraform script to deploy all the instances required. In the backend, we use Terraform to create all the resources and VMs required (including assigning master-slave VMs), and then use Kubespray (a cluster of Ansible scripts) to install Kubernetes onto the VMs.
+To provide more details, in the front-end, we use a terraform script to deploy all the instances required. In the backend, we use Terraform to create all the resources and VMs required (including assigning master-slave VMs), and then use Kubespray (a cluster of Ansible scripts) to install Kubernetes onto the VMs.
 
 <!--#### Front End and Middleware
 For the frontend and middleware solution, the work previously done by the Harvard SID team will serve as the foundation for the MOC implementation. Our goal is to use the provided Heroku code and host a instance on the MOC. We will not be doing any major adjustments to the current SID approach only ad-hoc tasks that prevent us from completing the implementation.-->
@@ -92,11 +92,11 @@ The 'step-by-Step Instruction to run Automation script' document is located [her
 
 ## 5. Acceptance criteria
 
-* **Initial Version**
+**Initial Version**
  - **Minimum Acceptance Criteria:** successfully replicate Sid Project in the MOC environment
  - **Stretch Goals:** Deal with security aspect of Sid.
 
-* **Revised Version**
+**Revised Version**
 The initial version proved to be too much for us to complete by the due date. After discussing with the Harvard team, they were already impressed at our current progress and are content with us at where we are.
 
  - **Revised acceptance criteria:** Write 2 automation scripts; One to deploy the front end and middleware on Openshift, and the second, to install kubernetes in the backend. The automation script should be able to request for all the required resources (such as VM instances, security groups.etc) for the execution to take place.

@@ -78,7 +78,7 @@ This document includes the technology and the procedures that we used : [Knowled
 
 ### Installation Document
 
-The installation document is located [here](/Sid install.pdf).
+The installation document is located [here](https://github.com/BU-CLOUD-S20/MOC-Research-Computing/blob/master/Sid%20install.pdf)
 
 ## 5. Acceptance criteria
 

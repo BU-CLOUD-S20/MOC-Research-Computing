@@ -76,9 +76,9 @@ Our goal is porting the current system onto MOC. The current Sid system uses Kub
 
 This document includes the technology and the procedures that we used : [Knowledge Document](https://github.com/BU-CLOUD-S20/MOC-Research-Computing/blob/master/Knowledge%20Documents%20.pdf)
 
-### Installation Document
+### Step-by-Step Instruction to run Automation script.
 
-The installation document is located [here](https://github.com/BU-CLOUD-S20/MOC-Research-Computing/blob/master/Sid%20install.pdf)
+The 'step-by-Step Instruction to run Automation script' document is located [here](https://github.com/BU-CLOUD-S20/MOC-Research-Computing/blob/master/Sid%20install.pdf)
 
 ## 5. Acceptance criteria
 
@@ -122,6 +122,12 @@ Frontend:
 Backend:
 - Using Ansible / Kubespray to install Kubernetes on MOC
 - Bugs located and fixed in Terraform resources creating scripts
+
+##### Sprint 6 (04/29/2020)
+ - Finalize Documentation;
+   - [Step-by-Step Instructions to use automation scripts](https://github.com/BU-CLOUD-S20/MOC-Research-Computing/blob/master/Sid%20install.pdf)
+   - [Knowledge Document](https://github.com/BU-CLOUD-S20/MOC-Research-Computing/blob/master/Knowledge%20Documents%20.pdf)
+ - Fix bugs
 
 ## 7. Future Work
 

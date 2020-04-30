@@ -76,15 +76,20 @@ Our goal is porting the current system onto MOC. The current Sid system uses Kub
 
 This document includes the technology and the procedures that we used : [Knowledge Document](https://github.com/BU-CLOUD-S20/MOC-Research-Computing/blob/master/Knowledge%20Documents%20.pdf)
 
+### Installation Document
+
+The installation document is located [here](/Sid install.pdf).
+
 ## 5. Acceptance criteria
 
 * **Initial Version**
-Minimum Acceptance Criteria: successfully replicate Sid Project in the MOC environment
-Stretch Goals: Deal with security aspect of Sid.
+ - **Minimum Acceptance Criteria:** successfully replicate Sid Project in the MOC environment
+ - **Stretch Goals:** Deal with security aspect of Sid.
 
 * **Revised Version**
 The initial version proved to be too much for us to complete by the due date. After discussing with the Harvard team, they were already impressed at our current progress and are content with us at where we are.
-The revised acceptance criteria is: “Write 2 automation scripts: One to deploy the front end and middleware on Openshift, and the second, to install kubernetes in the backend. The automation script should be able to request for all the required resources (such as VM instances, security groups.etc) for the execution to take place.”
+
+ - **Revised acceptance criteria:** Write 2 automation scripts; One to deploy the front end and middleware on Openshift, and the second, to install kubernetes in the backend. The automation script should be able to request for all the required resources (such as VM instances, security groups.etc) for the execution to take place.
 
 ## 6.  Release Planning:
 

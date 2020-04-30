@@ -97,6 +97,7 @@ The 'step-by-Step Instruction to run Automation script' document is located [her
  - **Stretch Goals:** Deal with security aspect of Sid.
 
 **Revised Version**
+
 The initial version proved to be too much for us to complete by the due date. After discussing with the Harvard team, they were already impressed at our current progress and are content with us at where we are.
 
  - **Revised acceptance criteria:** Write 2 automation scripts; One to deploy the front end and middleware on Openshift, and the second, to install kubernetes in the backend. The automation script should be able to request for all the required resources (such as VM instances, security groups.etc) for the execution to take place.

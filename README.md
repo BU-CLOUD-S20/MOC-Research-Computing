@@ -1,4 +1,3 @@
-test changes
 # Create a Kubernetes based on-demand research computing environment in MOC
 Mentor: Mike Reekie
 

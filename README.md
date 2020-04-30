@@ -26,11 +26,21 @@ As a project mainly working on backend, the active users are the technicians of 
 ## 3.   Scope and Features Of The Project:
 
 #### Front End and Middleware
-For the frontend and middleware solution, the work previously done by the Harvard SID team will serve as the foundation for the MOC implementation. Our goal is to use the provided Heroku code and host a instance on the MOC. We will not be doing any major adjustments to the current SID approach only ad-hoc tasks that prevent us from completing the implementation. 
+In the original implemention of sid, the front-end and middleware was hosted on Heroku. In our implementation of Sid on MOC, we are hosting it on OpenShift.
 
 #### Backend/Cloud
-For the cloud portion of our solution, we will be designing a kubernetes based infrastructure that will work with the SID frontend/middleware solution provided and the tools currently provided by the MOC. The goal is to mimic the necessary features that SID uses with AWS, such as, EC2 instances and kubernetes support, and recreate them on the MOC infrastructure. This will prove the concept of being able to connect SID to a seperate cloud provider. A low priority focus has been placed on authentication and data protection.  
+In the original implemention of sid, the front-end and middleware was hosted on Amazon EKS. In our implementation of Sid on MOC, we install kubernetes on top of VMs on OpenStack. On the kubernetes, we install the sid-backend image.
 
+#### Automation Scripts
+Creating automation scripts to deploy the entire sid software is the main focus of the project. We created Terraform and Kubespray/Ansible scripts to automatically deploy sid(front-end, middleware and backend/cloud).
+
+In the front-end, we use a terraform script to deploy all the instances required. In the backend, we use Terraform to create all the resources and VMs required (including assigning master-slave VMs), and then use Kubespray (a cluster of Ansible scripts) to install Kubernetes onto the VMs.
+
+<!--#### Front End and Middleware
+For the frontend and middleware solution, the work previously done by the Harvard SID team will serve as the foundation for the MOC implementation. Our goal is to use the provided Heroku code and host a instance on the MOC. We will not be doing any major adjustments to the current SID approach only ad-hoc tasks that prevent us from completing the implementation.-->
+
+<!--#### Backend/Cloud
+For the cloud portion of our solution, we will be designing a kubernetes based infrastructure that will work with the SID frontend/middleware solution provided and the tools currently provided by the MOC. The goal is to mimic the necessary features that SID uses with AWS, such as, EC2 instances and kubernetes support, and recreate them on the MOC infrastructure. This will prove the concept of being able to connect SID to a seperate cloud provider. A low priority focus has been placed on authentication and data protection.-->
 
 ## 4. Solution Concept
 

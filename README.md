@@ -35,13 +35,11 @@ For the cloud portion of our solution, we will be designing a kubernetes based i
 ## 4. Solution Concept
 
 
-
 ### Global Architectural Structure Of the Project
 
 <!--
 This section provides a high-level architecture or a conceptual diagram showing the scope of the solution. If wireframes or visuals have already been done, this section could also be used to show how the intended solution will look. This section also provides a walkthrough explanation of the architectural structure.
 -->
-
 
 
 > Note that figures in this section come from the design documenation of Sid team.
@@ -68,17 +66,26 @@ This section discusses the implications and reasons of the design decisions made
 -->
 
 Some design concepts:
-* **No OpenShift**:
-The previous team has already prove that OpenShift works not as good as expectation. Thanks for them hard working, we can get rid of this option.
+* **OpenShift**:
+We will be using OpenShift to containerize the front-end. The containers will be built and pushed into the OpenShift registry before building. Terraform is used to deploy the containers automatically. In all, OpenShift is used to deploy the front-end on OpenStack.
 
 * **Combine the Kubernetes and OpenStack**:
 Our goal is porting the current system onto MOC. The current Sid system uses Kubernetes to manage Docker containers. Meanwhile MOC provides OpenStack to manage VMs. Hence, we decided to use two techniques together. As we can observe, some companies have already used them together. Thus, we think this is viable.
 
 * **Focus on "Blue Part"**: Since the front-end and Kubernetes environment are mature now, the team should focus on "blue part" of the diagram to ensure the whole system can run properly on MOC. At the same time, as the manager has mentioned, don't make any change to the "green block".
 
+This document includes the technology and the procedures that we used : [Knowledge Document](https://github.com/BU-CLOUD-S20/MOC-Research-Computing/blob/master/Knowledge%20Documents%20.pdf)
+
 ## 5. Acceptance criteria
-minimum acceptance criteria:successfully replicate the Sid Project in the MOC environment.<br>
-stretch goals:deal with the security aspects of Sid.
+
+* **Initial Version**
+Minimum Acceptance Criteria: successfully replicate Sid Project in the MOC environment
+Stretch Goals: Deal with security aspect of Sid.
+
+* **Revised Version**
+The initial version proved to be too much for us to complete by the due date. After discussing with the Harvard team, they were already impressed at our current progress and are content with us at where we are.
+The revised acceptance criteria is: “Write 2 automation scripts: One to deploy the front end and middleware on Openshift, and the second, to install kubernetes in the backend. The automation script should be able to request for all the required resources (such as VM instances, security groups.etc) for the execution to take place.”
+
 ## 6.  Release Planning:
 
 ##### Sprint 1 (02/05/2020)   - [Demo Slides](https://drive.google.com/open?id=143zmWe8QWx_mgSnVnRZh-ouzFL96VPx0)
@@ -86,8 +93,6 @@ stretch goals:deal with the security aspects of Sid.
 * MOC access
 * Trying Openstack
 * Trying Kubernetes
-
-
 
 ##### Sprint 2 (02/26/2020)   - [Demo Slides](https://drive.google.com/open?id=1k5tufYwgwYa4eGq1knyiy0dHah0J6V94)
 * Install Sid development environment on every teammates' computer
@@ -104,18 +109,34 @@ stretch goals:deal with the security aspects of Sid.
 * Use Terraform to create resources on MOC (OpenStack)
 *	Manually deploy Kubernetes on OpenStack
 
-
 ##### Sprint 5 (04/15/2020)   - [Demo Slides](https://drive.google.com/open?id=1Mtqfh3GklQ0-ExeGrEvJREuvOIBQuyQ5)
 Frontend: 
 - Containerize front-end with OpenShift
 - Using Terraform to deploy components automatically
 
-
 Backend:
 - Using Ansible / Kubespray to install Kubernetes on MOC
 - Bugs located and fixed in Terraform resources creating scripts
 
+## 7. Future Work
 
+We have finshed the operations for the front-end, middleware and the backend. There have been minor changes with the target goal, but the Harvard team is content with the work we have produced.
+
+This leaves us with a few tasks that can be done in the future:
+ - Connecting all the components together.
+ - Having end-to-end automation.
+
+**Stretch future goal**
+
+As more clients request for instances of jupyter notebook, R studio and Linux Desktops, we scale the pods.
+In Kubernetes, this can be done easily using a feature called “Pod AutoScaler”. But what happens when the kubernetes workers have reached the maximum number of pods it can handle?
+
+Kubernetes has another feature called “Cluster Autoscaler” that allows Kubernetes to talk to the cloud provider to ask for more clusters or VMs, in order to handle more pods.
+However, this is where the problem lies. While this feature works with most cloud providers, such as AWS, Azure.etc, it is not supported on pure OpenStack. We mention pure openstack here, because it does work on Magnum, which is a library in OpenStack. However, the MOC openstack does not support Magnum.
+
+After speaking with the Harvard MIT Data Center team, they said that they acknowledge that cluster autoscaling is not supported on the MOC and we cannot replicate the same thing they did on AWS. They said it is okay and that this part is not part of the scope of the project.
+
+We discussed and agreed that technically, we could build a connector manually and make this work. But for now, we will leave it.
 
 
 <!--

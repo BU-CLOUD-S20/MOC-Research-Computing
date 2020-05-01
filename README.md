@@ -3,7 +3,7 @@ Mentor: Mike Reekie
 
 Team: Alex Wong, Bowen Qin, Mariano Pache, Sakhan Bhatia, Yuhao Zhou, Zeyu Song
 
-Final Presentation Video Link: https://youtu.be/Zy855Yx3t10 or https://drive.google.com/open?id=1VPwH0IHlT1bs3ArV0j35V51h8BkMcqFO
+Final Presentation Video Link: https://www.youtube.com/watch?v=6UJ2OQNOgFw or https://drive.google.com/file/d/1tJMh6pxaB9F_PL5OEZO5CWv6Xjr8bWPq/view?usp=sharing
 
 ## 1.Vision and Goals Of The Project:
 

@@ -90,6 +90,11 @@ This document includes the technology and the procedures that we used : [Knowled
 
 The 'step-by-Step Instruction to run Automation script' document is located [here](https://github.com/BU-CLOUD-S20/MOC-Research-Computing/blob/master/Sid%20install.pdf)
 
+#### Problemshooting
+##### Authentication Problems
+- For the current version terraform (v0.12.24), `OS_` prefix env variables doesn't work, please use `clouds.yaml` file instead (use application credential or username credential)
+- To use Ansible Script, please use username credential via `OS_` prefix env variables (i.e. RC file). Otherwise, it might not work.
+
 ## 5. Acceptance criteria
 
 **Initial Version**

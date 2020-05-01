@@ -166,6 +166,14 @@ After speaking with the Harvard MIT Data Center team, they said that they acknow
 
 We discussed and agreed that technically, we could build a connector manually and make this work. But for now, we will leave it.
 
+## 8. Directory summary
+ - terraform-sid-backend: automation script to deploy backend
+ - terraform-oc: automation script to deploy front-end and middleware
+ - terraform-vm: experimental scripts to deploy VMs
+ - scripts: experimental scripts to create tests between middleware and backend
+ - Documentation: stores images used in README.md
+ - Knowledge Documents .pdf: files that documents configuration details and knowledge/ideas in this project
+ - Sid install.pdf: installation and step-by-step instruction to run automation scripts
 
 <!--
 ** **

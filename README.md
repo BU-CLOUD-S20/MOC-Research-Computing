@@ -1,9 +1,9 @@
 # Create a Kubernetes based on-demand research computing environment in MOC
-Mentor: Mike Reekie
+**Mentor:** Mike Reekie
 
-Team: Alex Wong, Bowen Qin, Mariano Pache, Sakhan Bhatia, Yuhao Zhou, Zeyu Song
+**Team:** Alex Wong, Bowen Qin, Mariano Pache, Sakhan Bhatia, Yuhao Zhou, Zeyu Song
 
-Final Presentation Video Link: https://www.youtube.com/watch?v=6UJ2OQNOgFw or https://drive.google.com/file/d/1tJMh6pxaB9F_PL5OEZO5CWv6Xjr8bWPq/view?usp=sharing
+**Final Presentation Video Link:** https://www.youtube.com/watch?v=6UJ2OQNOgFw or https://drive.google.com/file/d/1tJMh6pxaB9F_PL5OEZO5CWv6Xjr8bWPq/view?usp=sharing
 
 ## 1.Vision and Goals Of The Project:
 
@@ -167,13 +167,13 @@ After speaking with the Harvard MIT Data Center team, they said that they acknow
 We discussed and agreed that technically, we could build a connector manually and make this work. But for now, we will leave it.
 
 ## 8. Directory summary
- - terraform-sid-backend: automation script to deploy backend
- - terraform-oc: automation script to deploy front-end and middleware
- - terraform-vm: experimental scripts to deploy VMs (can ignore)
- - scripts: experimental scripts to create tests between middleware and backend (can ignore)
- - Documentation: stores images used in README.md (can ignore)
- - Knowledge Documents .pdf: files that documents configuration details and knowledge/ideas in this project
- - Sid install.pdf: installation and step-by-step instruction to run automation scripts
+ - **terraform-sid-backend:** automation script to deploy backend
+ - **terraform-oc:** automation script to deploy front-end and middleware
+ - **terraform-vm:** experimental scripts to deploy VMs (can ignore)
+ - **scripts:** experimental scripts to create tests between middleware and backend (can ignore)
+ - **Documentation:** stores images used in README.md (can ignore)
+ - **Knowledge Documents .pdf:** files that documents configuration details and knowledge/ideas in this project
+ - **Sid install.pdf:** installation and step-by-step instruction to run automation scripts
 
 <!--
 ** **

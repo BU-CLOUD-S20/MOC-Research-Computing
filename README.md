@@ -3,7 +3,7 @@
 
 **Team:** Alex Wong, Bowen Qin, Mariano Pache, Sakhan Bhatia, Yuhao Zhou, Zeyu Song
 
-**Final Presentation Video Link:** https://youtu.be/eUP3GM7iCEUhttps://youtu.be/eUP3GM7iCEU
+**Final Presentation Video Link:** https://youtu.be/eUP3GM7iCEU
 
 ## 1.Vision and Goals Of The Project:
 

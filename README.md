@@ -53,8 +53,6 @@ This section provides a high-level architecture or a conceptual diagram showing 
 -->
 
 
-> Note that figures in this section come from the design documenation of Sid team.
-
 The architecture of the current work is shown as below:
 
 
